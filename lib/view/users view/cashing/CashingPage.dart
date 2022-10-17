@@ -1,3 +1,4 @@
+import 'package:app_casino_03/view/ownersView/ownersScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -33,6 +34,15 @@ class _CashingPageState extends State<CashingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: TextButton(onPressed: () {
+          // ここにボタンを押した時に呼ばれるコードを書く
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const OwnersScreenPage()),
+          );
+        }, child: const Text('owners')),
+      ),
       backgroundColor: Colors.grey.withOpacity(0.2),
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black45),
