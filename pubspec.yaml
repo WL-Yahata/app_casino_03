@@ -38,6 +38,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   syncfusion_flutter_calendar: ^20.3.49
 
+
+  intl: ^0.17.0
+
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
