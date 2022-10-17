@@ -12,7 +12,13 @@ class _SchedulePageState extends State<SchedulePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
+        centerTitle: true,
+        title: const Text(
+          'schedule',
+          style: TextStyle(color: Colors.black54),
+        ),
+        backgroundColor: Colors.white,
+        elevation: 1,
       ),
     );
   }
