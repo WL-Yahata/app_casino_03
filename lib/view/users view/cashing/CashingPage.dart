@@ -12,7 +12,13 @@ class _CashingPageState extends State<CashingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
+        centerTitle: true,
+        title: const Text(
+          'home',
+          style: TextStyle(color: Colors.black54),
+        ),
+        backgroundColor: Colors.white,
+        elevation: 1,
       ),
     );
   }
