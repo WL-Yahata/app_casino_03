@@ -14,7 +14,7 @@ class _TournamentPageState extends State<TournamentPage> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          'tournament',
+          'TournamentList',
           style: TextStyle(color: Colors.black54),
         ),
         backgroundColor: Colors.white,
