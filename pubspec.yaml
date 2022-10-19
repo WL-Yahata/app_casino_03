@@ -40,6 +40,7 @@ dependencies:
   syncfusion_flutter_calendar: ^20.3.49
 
   intl: ^0.17.0
+  http: ^0.13.5
 
   
 
