@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 class OwnersSchedulePage extends StatefulWidget {
   const OwnersSchedulePage({Key? key}) : super(key: key);
@@ -10,6 +11,26 @@ class OwnersSchedulePage extends StatefulWidget {
 class _OwnersSchedulePageState extends State<OwnersSchedulePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text(
+            'schedule',
+            style: TextStyle(color: Colors.black54),
+          ),
+          backgroundColor: Colors.white,
+          elevation: 1,
+        ),
+        body: SfCalendar(
+          view: CalendarView.month,
+          monthViewSettings: const MonthViewSettings(
+            appointmentDisplayMode: MonthAppointmentDisplayMode.appointment,
+            showAgenda: true,
+            showTrailingAndLeadingDates: false,
+          ),
+        ),
+      ),
+    );
   }
 }
