@@ -12,7 +12,16 @@ void main() async {
 
 class MyApp extends StatelessWidget {
    MyApp({super.key});
-  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  static final FirebaseFirestore firestore = FirebaseFirestore.instance;
+ static final CollectionReference _users = firestore.collection('users');
+
+ Future<void> addUser() async{
+   await _users.add({
+     'PokerName':
+      'BirthDay'
+   });
+   print('Userの追加完了');
+ }
 
   // This widget is the root of your application.
   @override
