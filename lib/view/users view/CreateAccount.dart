@@ -1,4 +1,8 @@
+import 'dart:io';
+
+import 'package:app_casino_03/view/users%20view/ScreenPage.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class CreateAccount extends StatefulWidget {
   const CreateAccount({Key? key}) : super(key: key);
@@ -9,7 +13,18 @@ class CreateAccount extends StatefulWidget {
 
 class _CreateAccountState extends State<CreateAccount> {
   TextEditingController nameController = TextEditingController();
+  TextEditingController birthdayController = TextEditingController();
+  File? image;
+  ImagePicker picker = ImagePicker();
 
+  Future<void>getImageFromGallery() async {
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+    if(pickedFile!=null) {
+      setState(() {
+        image = File(pickedFile.path);
+      });
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,24 +35,51 @@ class _CreateAccountState extends State<CreateAccount> {
         title: const Text('新規登録',style:TextStyle(color:Colors.black45,)),
         centerTitle: true,
       ),
-      body: SizedBox(
-        child: Container(
-          width: double.infinity,
-          child: Column(
-            children:  [
-              const SizedBox(height: 30),
-              const CircleAvatar(
-                radius: 40,
-                child: Icon(Icons.add),
-              ),
-              SizedBox(
-                width: 300,
-                child: TextField(
-                  controller: nameController,
-                  decoration: const InputDecoration(hintText: '名前'),
+      body: SingleChildScrollView(
+        child: SizedBox(
+          child: Container(
+            width: double.infinity,
+            child: Column(
+              children:  [
+                const SizedBox(height: 30),
+                GestureDetector(
+                  onTap: (){
+                    getImageFromGallery();
+                  },
+                  child:  CircleAvatar(
+                    foregroundImage: image == null ? null : FileImage(image!),
+                    radius: 40,
+                    child: const Icon(Icons.add),
+                  ),
                 ),
-              )
-            ],
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: SizedBox(
+                    width: 300,
+                    child: TextField(
+                      controller: nameController,
+                      decoration: const InputDecoration(hintText: '名前'),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 300,
+                  child: TextField(
+                    controller: birthdayController,
+                    decoration: const InputDecoration(hintText: '誕生日'),
+                )
+                ),
+                const SizedBox(height: 50),
+                  ElevatedButton(onPressed: (){
+                    if(nameController.text.isNotEmpty && birthdayController.text.isNotEmpty && image !=null){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ScreenPage()));
+                    }
+                  }, child: const Text('作成')),
+              ],
+            ),
           ),
         ),
       ),

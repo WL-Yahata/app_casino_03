@@ -1,4 +1,4 @@
-import 'package:app_casino_03/view/ownersView/ownersScreen.dart';
+import 'package:app_casino_03/view/users%20view/CreateAccount.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -39,7 +39,7 @@ class _CashingPageState extends State<CashingPage> {
           // ここにボタンを押した時に呼ばれるコードを書く
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const OwnersScreenPage()),
+            MaterialPageRoute(builder: (context) => const CreateAccount()),
           );
         }, child: const Text('owners')),
       ),
