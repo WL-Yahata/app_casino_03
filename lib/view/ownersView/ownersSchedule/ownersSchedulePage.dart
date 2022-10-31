@@ -1,3 +1,4 @@
+import 'package:app_casino_03/view/ownersView/ownersSchedule/scheTournamentList.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
@@ -21,6 +22,16 @@ class _OwnersSchedulePageState extends State<OwnersSchedulePage> {
           ),
           backgroundColor: Colors.white,
           elevation: 1,
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const ScheTournamentList()));
+          },
+          backgroundColor: Colors.black45,
+          child: const Icon(Icons.list),
         ),
         body: SfCalendar(
           view: CalendarView.month,
