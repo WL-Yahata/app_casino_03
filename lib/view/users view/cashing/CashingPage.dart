@@ -35,19 +35,27 @@ class _CashingPageState extends State<CashingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
-        child: TextButton(onPressed: () {
-          // ここにボタンを押した時に呼ばれるコードを書く
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const CreateAccount()),
-          );
-        }, child: const Text('owners')),
+
+        child: TextButton(
+            onPressed: () {
+              // ここにボタンを押した時に呼ばれるコードを書く
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const OwnersScreenPage()),
+              );
+            },
+            child: const Text('owners')),
+
       ),
       backgroundColor: Colors.grey.withOpacity(0.2),
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black45),
         centerTitle: true,
-        title: const Text('home', style: TextStyle(color: Colors.black54),),
+        title: const Text(
+          'home',
+          style: TextStyle(color: Colors.black54),
+        ),
         backgroundColor: Colors.white,
         elevation: 1,
       ),
@@ -73,7 +81,7 @@ class _CashingPageState extends State<CashingPage> {
                 child: Row(
                   children: [
                     Container(
-                      //QRコード
+                        //QRコード
                         alignment: Alignment.centerLeft,
                         padding: const EdgeInsets.all(10.0),
                         margin: const EdgeInsets.only(
@@ -171,7 +179,7 @@ class _CashingPageState extends State<CashingPage> {
                   ],
                 )),
             Container(
-              //投稿ページ
+                //投稿ページ
                 alignment: Alignment.topCenter,
                 padding: const EdgeInsets.all(10.0),
                 margin: const EdgeInsets.only(
@@ -193,15 +201,15 @@ class _CashingPageState extends State<CashingPage> {
                       decoration: BoxDecoration(
                           border: index == 0
                               ? const Border(
-                            top: BorderSide(
-                                color: Colors.black45, width: 0),
-                            bottom: BorderSide(
-                                color: Colors.black45, width: 0),
-                          )
+                                  top: BorderSide(
+                                      color: Colors.black45, width: 0),
+                                  bottom: BorderSide(
+                                      color: Colors.black45, width: 0),
+                                )
                               : const Border(
-                            bottom: BorderSide(
-                                color: Colors.black45, width: 0),
-                          )),
+                                  bottom: BorderSide(
+                                      color: Colors.black45, width: 0),
+                                )),
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 10),
                       child: Row(
@@ -215,7 +223,7 @@ class _CashingPageState extends State<CashingPage> {
                               children: [
                                 Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     const Text(
                                       'Leje',
@@ -241,4 +249,3 @@ class _CashingPageState extends State<CashingPage> {
     );
   }
 }
-

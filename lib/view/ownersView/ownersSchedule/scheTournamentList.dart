@@ -1,5 +1,5 @@
-import 'package:app_casino_03/view/ownersView/ownersSchedule/ownersSchedulePage.dart';
 import 'package:app_casino_03/view/ownersView/ownersSchedule/scheAddTournament.dart';
+import 'package:app_casino_03/view/ownersView/ownersSchedule/scheEditTournament.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +63,7 @@ class _ScheTournamentListState extends State<ScheTournamentList> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => OwnersSchedulePage()),
+                            builder: (context) => const ScheEditTournament()),
                       );
                     },
                     child: Container(

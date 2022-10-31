@@ -32,9 +32,13 @@ class _CreateAccountState extends State<CreateAccount> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.black45),
-        title: const Text('新規登録',style:TextStyle(color:Colors.black45,)),
+        title: const Text('新規登録',
+            style: TextStyle(
+              color: Colors.black45,
+            )),
         centerTitle: true,
       ),
+
       body: SingleChildScrollView(
         child: SizedBox(
           child: Container(
@@ -68,6 +72,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     controller: birthdayController,
                     decoration: const InputDecoration(hintText: '誕生日'),
                 )
+
                 ),
                 const SizedBox(height: 50),
                   ElevatedButton(onPressed: (){
