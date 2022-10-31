@@ -8,6 +8,8 @@ class CreateAccount extends StatefulWidget {
 }
 
 class _CreateAccountState extends State<CreateAccount> {
+  TextEditingController nameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,16 +20,25 @@ class _CreateAccountState extends State<CreateAccount> {
         title: const Text('新規登録',style:TextStyle(color:Colors.black45,)),
         centerTitle: true,
       ),
-      body: Container(
-        width: double.infinity,
-        child: Column(
-          children: const [
-            SizedBox(height: 30),
-            CircleAvatar(
-              radius: 40,
-              child: Icon(Icons.add),
-            )
-          ],
+      body: SizedBox(
+        child: Container(
+          width: double.infinity,
+          child: Column(
+            children:  [
+              const SizedBox(height: 30),
+              const CircleAvatar(
+                radius: 40,
+                child: Icon(Icons.add),
+              ),
+              SizedBox(
+                width: 300,
+                child: TextField(
+                  controller: nameController,
+                  decoration: const InputDecoration(hintText: '名前'),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
