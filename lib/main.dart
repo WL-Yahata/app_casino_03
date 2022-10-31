@@ -7,21 +7,19 @@ import 'firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-   MyApp({super.key});
-  static final FirebaseFirestore firestore = FirebaseFirestore.instance;
- static final CollectionReference _users = firestore.collection('users');
+final FirebaseFirestore firestore = FirebaseFirestore.instance;
+final CollectionReference _users = firestore.collection('users');
 
- Future<void> addUser() async{
-   await _users.add({
-     'PokerName':
-      'BirthDay'
-   });
-   print('Userの追加完了');
- }
+class MyApp extends StatelessWidget {
+  MyApp({super.key});
+
+  Future<void> addUser() async {
+    await _users.add({'PokerName': 'BirthDay'});
+    print('Userの追加完了');
+  }
 
   // This widget is the root of your application.
   @override
