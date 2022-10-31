@@ -17,14 +17,17 @@ class _CreateAccountState extends State<CreateAccount> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.black45),
-        title: const Text('新規登録',style:TextStyle(color:Colors.black45,)),
+        title: const Text('新規登録',
+            style: TextStyle(
+              color: Colors.black45,
+            )),
         centerTitle: true,
       ),
       body: SizedBox(
         child: Container(
           width: double.infinity,
           child: Column(
-            children:  [
+            children: [
               const SizedBox(height: 30),
               const CircleAvatar(
                 radius: 40,

@@ -62,4 +62,3 @@ class _ScreenPageState extends State<ScreenPage> {
     );
   }
 }
-
