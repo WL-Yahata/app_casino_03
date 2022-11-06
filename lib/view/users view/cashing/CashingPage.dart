@@ -1,10 +1,10 @@
-import 'package:app_casino_03/view/users%20view/CreateAccount.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../../model/Account.dart';
 import '../../../model/PlayMoney.dart';
 import '../../../model/Post.dart';
+import '../../ownersView/ownersScreen.dart';
 
 class CashingPage extends StatefulWidget {
   const CashingPage({Key? key}) : super(key: key);
