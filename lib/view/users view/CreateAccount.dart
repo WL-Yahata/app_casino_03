@@ -62,7 +62,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     width: 300,
                     child: TextField(
                       controller: nameController,
-                      decoration: const InputDecoration(hintText: '名前'),
+                      decoration: const InputDecoration(hintText: 'PokerName'),
                     ),
                   ),
                 ),
